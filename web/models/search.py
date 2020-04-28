@@ -77,7 +77,7 @@ class Search(object):
                 qs += u' index_letter:({0})'.format(self.word)
                 fields.append("index_letter")
         else:
-          qs += u' verb_form:({0})'.format(self._word)
+          qs += u" verb_form:('{0}')".format(self._word)
 
         self.query = MultifieldParser(fields, ix.schema).parse(qs)
 
